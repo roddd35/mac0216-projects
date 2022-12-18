@@ -1,0 +1,82 @@
+AUTOR:
+	Rodrigo de Castro Michelassi
+	13672703
+	rodrigo.michelassi@usp.br
+
+DESCRIÇÃO:
+	O programa em questão foi feito para a disciplina MAC0216 - Técnicas de Programação I, no Instituto de Matemática e Estatística da USP.
+	Esse programa, feito nas linguagens C e Bash Script, e tem como objetivo:
+
+	I.   Criar bibliotecas dinâmicas e estáticas de funções em C e trabalhar os conjuntos vistos em aula.
+	II.  Prática de lógica de programação em C.
+	III. Utilizar comandos de script em Linux para compilação do código e das bibliotecas.
+	IV.  Uso do comando RAND() para geração de números pseudo-aleatórios
+	
+	Os testes de tempo no terminal foram executados com o seguinte comando:
+	
+		$ time ./teste
+
+	É esperado, durante os cálculos, que a execução do programa não seja instantânea, levando no máximo 3s para cada resultado, devido à função "ehQuadradoPerfeito"
+	
+COMO EXECUTAR:
+
+	Para compilar o programa e as bibliotecas utilizadas, basta executar o arquivo 'compila.sh', recebido no pacote .tar.gz. Ele pode ser executado da seguinte maneira:
+	
+		$ cd (diretorio onde está o compila .sh)
+		$ chmod +x compila.sh (dar permissão para executar o programa)
+		$ ./compila.sh
+		
+	São esperadas as seguintes saídas no terminal (note, isso será impresso no terminal, não são comandos a serem digitados):
+		
+		$ a - propriedadesnumericas.o
+		$ propriedadesnumericas.o
+	
+	Após a compilação, devem aparecer na pasta novos arquivos com extensão .o, .so e .a, além de dois diretórios do Doxygen.
+	No diretório 'HTML' gerado, podemos encontrar um arquivo 'index.html', o qual conterá uma página web com as descrições das funções do programa.
+	Além disso, o programa será rodado instantaneamente após isso, permitindo algumas entradas (seguem exemplos abaixo)
+	
+	Para executar o programa de testes, no terminal de um computador com Linux baseado em debian, basta digitar, no diretório onde o programa se encontra:
+	
+		$ ./teste
+	
+	Após isso, o programa estará rodando e será necessário apenas digitar as entradas desejadas.
+
+TESTES:
+	O programa recebe como entrada um valor da semente para geração dos números aleatórios e o tamanho do vetor, nessa ordem.
+	
+	A seguir, estão alguns exemplos de entradas e suas respectivas saídas esperadas logo abaixo, que você pode testar para verificar se o programa está funcionando corretamente:
+	
+		entrada: 34 3
+		saída:	     Número         | Primo | Par | Quad | Cubo | Fib | Fat
+			22276493770589744   |     0 |   1 |    0 |    0 |   0 |    0
+
+			     Número         | Primo | Par | Quad | Cubo | Fib | Fat
+			1299598588892778484 |     0 |   1 |    0 |    0 |   0 |    0
+
+			     Número         | Primo | Par | Quad | Cubo | Fib | Fat
+			534798143967678282  |     0 |   1 |    0 |    0 |   0 |    0
+
+				   
+		entrada: 2198 2		   
+		saída:	     Número         | Primo | Par | Quad | Cubo | Fib | Fat
+			2989072275612287865 |     0 |   0 |    0 |    0 |   0 |    0
+
+       			     Número         | Primo | Par | Quad | Cubo | Fib | Fat
+			72350929674222274   |     0 |   1 |    0 |    0 |   0 |    0
+
+
+
+DEPENDÊNCIAS:
+	Para executar o arquivo .C, é necessário, em uma máquina com UBUNTU, utilizar o programa GCC, para obte-lo digite no terminal:
+		$ sudo apt update
+		$ sudo apt install build-essential
+
+	Além disso, para compilar as bibliotecas, como é necessário utilizar um programa .sh dado, é necessário que o computador utilizado utilize um SO Linux, baseado em Debian.
+
+	Como valores de referência, esse programa foi feito em um notebook com as seguintes especificações:
+		Versão Ubuntu: Ubuntu 21.10
+		Versão GCC: gcc (Ubuntu 11.2.0-7ubuntu2) 11.2.0 (digitar: $ gcc --version no terminal)
+		Processador: Intel(R) Core(TM) i7-8565U CPU @ 1.80GH
+		Memória Sistema: 8GB (2*4GB SODIMM DDR4 Synchronous 2400 MHz) RAM
+		Versão do Linker: GNU ld (GNU Binutils for Ubuntu) 2.37
+

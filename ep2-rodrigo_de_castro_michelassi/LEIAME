@@ -1,0 +1,54 @@
+AUTOR:
+	Rodrigo de Castro Michelassi
+	NUSP: 13672703
+	rodrigo.michelassi@usp.br
+	
+DESCRIÇÃO:
+	O programa foi feito com intuito de praticar o que foi visto nas aulas de MAC0216 - Técnicas de Programação 1, no curso de Ciência da Computação. Esse programa, dado
+as entradas que serão explicadas em outro tópico, retorna dados sobre o computador para o usuário por meio de um arquivo de texto e uma mensagem em um chat do Telegram. Esses dados
+são compostos por: Data e Hora exatamente no momento de execução, ociosidade da CPU que está rodando o programa, informações sobre um servidor (online ou offline) e os IPs conectados
+a esse servidor.
+
+COMO EXECUTAR:
+	Para executar esse programa, tendo as dependências instaladas na máquina e um bot do telegram feito, é necessário, no terminal de uma máquina com Ubuntu:
+	
+	$ cd /diretorio/
+	$ ./ep2.sh tempo_exec arquivo_saida limite_ociosidade token_bot id_bot
+	
+onde, os itens especificados acima, são parâmetros para a execução.
+
+TESTES:
+
+	Levemos em consideração o seguinte teste:
+	
+	./ep2.sh 1 /Documents/USP/2nd\ semester/tecprog/projetos/ep2-rodrigo_de_castro_michelassi/texto.txt 98 5794998504:AAGJlQ_aQOwLOy0v6pMTbsV2MRlIZJxFhLU 5179476747
+	
+	Feito esse em minha máquina pessoal, devemos receber mensagens no chat do bot do Telegram, exibindo sempre as informações citadas na descrição do programa.
+	Pode haver variações, caso o servidor esteja ligado ou desligado. Um dos resultados obtidos foi:
+	
+	Servidor desligado:				Servidor ligado:
+	
+	Data e hora: 12/10/2022 18:34:24		Data e hora: 12/10/2022 17:36:05
+	Ociosidade da CPU: 97.0				Ociosidade da CPU: 96.9
+	O servidor está fora do ar.			IPs: 127.0.0.1:34012; 127.0.0.1:45052;
+	
+DEPENDÊNCIAS:
+
+	Para que esse programa funcione, é necessário a criação de um bot no Telegram. Esse bot pode ser criado seguindo os passos da página:
+	
+	https://imasters.com.br/desenvolvimento/criando-um-bot-no-telegram-para-avisar-que-um-sistema-esta-fora-do-ar
+	
+	Após isso, é necessário também um servidor de uso no computador, que pode ser instalado com o comando, no terminal do Ubuntu:
+	
+	$ sudo apt-get install netcat
+	$ sudo apt-get install net-tools
+	
+	Iniciado e executado com os comandos:
+	
+	$ nc -k -l -p 45052	$ nc 127.0.0.1 45052
+	
+	Como valores de referência, esse programa foi feito em um notebook com as seguintes especificações:
+		Versão Ubuntu: Ubuntu 22.04
+		Processador: Intel(R) Core(TM) i7-8565U CPU @ 1.80GH
+		Memória Sistema: 8GB (2*4GB SODIMM DDR4 Synchronous 2400 MHz) RAM
+		Versão do Linker: GNU ld (GNU Binutils for Ubuntu) 2.37

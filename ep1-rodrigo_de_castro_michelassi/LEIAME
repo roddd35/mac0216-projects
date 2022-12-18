@@ -1,0 +1,63 @@
+AUTOR:
+	Rodrigo de Castro Michelassi
+	13672703
+	rodrigo.michelassi@usp.br
+
+DESCRIÇÃO:
+	O programa em questão foi feito para a disciplina MAC0216 - Técnicas de Programação I, no Instituto de Matemática e Estatística da USP.
+	Esse programa, feito nas linguagens C e Assembly (arquitetura x86_64), tem dois objetivos propostos:
+
+	I.  Dado um número natural, verificar o próximo número primo a partir dele e imprimir esse número;
+	II. Dado um número natural, verificar se ele é múltiplo de dois números primos, e imprimir esses números caso existam.
+
+	A proposta desse projeto é que o programa seja feito nas duas linguagens diferentes, e por fim comparar o desempenho de execução usando cada uma delas, além de praticar a programação em Assembly vista em aula.
+
+COMO COMPILAR:
+
+I. Programa em C
+	Podemos compilar o programa, indo até o diretório dele no terminal:
+		$ cd (caminho-diretorio)	# esse comando permite se direcionar ao diretório onde o programa está presente.
+		$ gcc -Wall -o fonte fonte.c	# esse comando permite compilar o programa.
+
+II. Programa em Assembly
+	Assim como em C, podemos compilar o programa indo até o diretório dele no terminal:
+		$ cd (caminho-diretorio)	#esse comando permite se direcionar ao diretório onde o programa está presente.	
+		$ nasm f elf64 epS.s -o epS.o	#esses comandos permitem compilar o programa. 
+		$ ld -s -o epS epS.o
+
+COMO EXECUTAR:
+
+I. Programa em C
+	Com o programa já compilado, para executar basta digitar no terminal, no diretório onde o programa está:
+		$ ./epC
+
+II. Programa em Assembly
+	Com o programa já compilado, para executar basta digitar no terminal, no diretório onde o programa está:
+		$ ./epS
+
+	Após isso, o programa estará sendo executado, e a primeira coisa a fazer é digitar os valores de entrada. Primeiramente deve ser inserido o modo de execução (0: Verificar o próximo primo / 	1: Verificar se o número dado é múltiplo de dois primos) e após isso, digitar o valor a ser verificado. Ambos os valores devem ser digitados, um de cada vez, apertando "ENTER" após algum deles, ou juntos, separados por um espaço.
+	Por fim, o programa irá retornar os resultados esperados. A saída deve ser vista conforme o modo de execução:
+
+	0: O número impresso deve ser o próximo número primo, após o número que você digitou. Mesmo que você tenha digitado um número primo, o programa irá imprimir o próximo primo na sequência.
+	1: A saída será composta por 2 números, os quais, multiplicados, resulta no número de entrada que você inseriu após o modo de execução. Caso o programa não imprima nada, significa que o número de entrada não é produto de dois números primos.
+
+TESTES:
+	A seguir, estão alguns exemplos de entradas e suas respectivas saídas esperadas logo abaixo, que você pode testar para verificar se o programa está funcionando corretamente:
+		entrada: 0 610666660	0 10000000	1 908118221	1 6	1 908118222	1 2	0 2	1 49
+		saída:   610666687	10000019	30133 30137	2 3				3	7 7
+
+DEPENDÊNCIAS:
+	Para executar o arquivo .C, é necessário, em uma máquina com UBUNTU, utilizar o programa GCC, para obte-lo digite no terminal:
+		$ sudo apt update
+		$ sudo apt install build-essential
+
+	Para executar o arquivo .S, é necessário, em uma máquina com UBUNTU, utilizar o programa NASM, para obte-lo, digite no terminal:
+		$ sudo apt-get install nasm	
+
+	Como valores de referência, esse programa foi feito em um notebook com as seguintes especificações:
+		Versão Ubuntu: Ubuntu 21.10
+		Versão GCC: gcc (Ubuntu 11.2.0-7ubuntu2) 11.2.0 (digitar: $ gcc --version no terminal)
+		Processador: Intel(R) Core(TM) i7-8565U CPU @ 1.80GH
+		Memória Sistema: 8GB (2*4GB SODIMM DDR4 Synchronous 2400 MHz) RAM
+		Versão do Linker: GNU ld (GNU Binutils for Ubuntu) 2.37
+
